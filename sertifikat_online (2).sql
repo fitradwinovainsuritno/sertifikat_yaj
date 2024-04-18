@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Mar 2024 pada 08.17
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 7.4.24
+-- Generation Time: Apr 16, 2024 at 01:03 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.3.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `certificate`
+-- Database: `sertifikat_online`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `certificates`
+-- Table structure for table `certificates`
 --
 
 CREATE TABLE `certificates` (
@@ -36,18 +36,10 @@ CREATE TABLE `certificates` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `certificates`
---
-
-INSERT INTO `certificates` (`certificate_id`, `participant_name`, `event_name`, `event_date`, `certificate_text`, `created_at`) VALUES
-(1, 'Rizla Azcha Fahrezi', 'Praktik Kerja Lapangan (PKL)- rizla', '2022-10-03', 'Telah menyelesaikan Program Pendidikan Sistem Ganda melalui Praktik Kerja Lapangan (PKL) yang dilaksanakan di :', '2024-03-03 14:07:38'),
-(2, 'fsrgdtyfjguhil', 'Praktik Kerja Lapangan (PKL)-ajbskadjsd', '2022-10-03', 'Telah menyelesaikan Program Pendidikan Sistem Ganda melalui Praktik Kerja Lapangan (PKL) yang dilaksanakan di :', '2024-03-03 14:07:38');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `certificate_assignments`
+-- Table structure for table `certificate_assignments`
 --
 
 CREATE TABLE `certificate_assignments` (
@@ -58,18 +50,10 @@ CREATE TABLE `certificate_assignments` (
   `assigned_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `certificate_assignments`
---
-
-INSERT INTO `certificate_assignments` (`assignment_id`, `certificate_id`, `user_id`, `event_id`, `assigned_at`) VALUES
-(1, 1, 1, 1, '2024-03-03 14:22:03'),
-(2, 1, 2, 2, '2024-03-04 04:56:07');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `events`
+-- Table structure for table `events`
 --
 
 CREATE TABLE `events` (
@@ -81,18 +65,10 @@ CREATE TABLE `events` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `events`
---
-
-INSERT INTO `events` (`event_id`, `event_name`, `event_date`, `location`, `organizer`, `created_at`) VALUES
-(1, 'Praktik Kerja Lapangan (PKL)', '2022-10-03', 'PT. Konekthing Benda Pintar', 'SMK YAJ DEPOK', '2024-03-03 13:30:47'),
-(2, 'Praktik Kerja Lapangan (PKL)', '2022-10-03', 'PT. Konekthing Benda Pintar', 'SMK YAJ DEPOK', '2024-03-03 13:30:47');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -106,26 +82,24 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `full_name`, `email`, `created_at`, `level`) VALUES
-(0, 'admin', '$2y$10$NacgI41gJwVjMxd9hB.5quMm.28aVc57SOwXwim4B7de1kbnPJo/W', 'admin', 'admin@gmail.com', '2024-02-28 02:06:27', 'admin'),
-(1, 'Rizla Azc', '$2y$10$r8rwGWK.ZjDUKnKBj8iIlO2gqRW0PVY4ay1ids/d1ed2d9icjWSVS', 'Rizla Azcha Fahrezi', 'azchafahrezi@gmail.com', '2024-03-03 13:36:33', 'user'),
-(2, 'fsrgdtyfjguhil', '$2y$10$SyNeWZO0u0KJR/ItvrxPIO5pypSTsnhsbZyvd8agZe4HdCSps3wOi', 'sgdhgfjhgkjhkjk', 'wtytyukghij@gmail.com', '2024-03-04 04:52:16', 'user');
+(0, 'admin', '$2y$10$9brZ3nnusQ56Xm2maQjBY.p8GVVvUiGqs1sYXkiRqad6gBp2vcFUC', 'admin', 'dwinovian@gmail.com', '2024-03-06 02:12:41', 'admin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `certificates`
+-- Indexes for table `certificates`
 --
 ALTER TABLE `certificates`
   ADD PRIMARY KEY (`certificate_id`);
 
 --
--- Indeks untuk tabel `certificate_assignments`
+-- Indexes for table `certificate_assignments`
 --
 ALTER TABLE `certificate_assignments`
   ADD PRIMARY KEY (`assignment_id`),
@@ -134,51 +108,51 @@ ALTER TABLE `certificate_assignments`
   ADD KEY `event_id` (`event_id`);
 
 --
--- Indeks untuk tabel `events`
+-- Indexes for table `events`
 --
 ALTER TABLE `events`
   ADD PRIMARY KEY (`event_id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `certificates`
+-- AUTO_INCREMENT for table `certificates`
 --
 ALTER TABLE `certificates`
-  MODIFY `certificate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `certificate_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `certificate_assignments`
+-- AUTO_INCREMENT for table `certificate_assignments`
 --
 ALTER TABLE `certificate_assignments`
-  MODIFY `assignment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `assignment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `events`
+-- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `certificate_assignments`
+-- Constraints for table `certificate_assignments`
 --
 ALTER TABLE `certificate_assignments`
   ADD CONSTRAINT `certificate_assignments_ibfk_1` FOREIGN KEY (`certificate_id`) REFERENCES `certificates` (`certificate_id`),

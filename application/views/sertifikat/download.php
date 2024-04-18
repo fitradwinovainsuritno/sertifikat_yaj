@@ -18,16 +18,17 @@
 
 
     
+    <h3 style="text-align: center;">Yang dilaksanakan oleh:</h3>
     <h1 style="text-align: center;"><?= $event->organizer ?></h1>
     <hr style="width: 55%; ">
     <h3 style="text-align: center;">Diberikan kepada :</h3>
     <h1 style="text-align: center;"><?= $sertifikat->participant_name ?></h1>
-    <h2 style="text-align: center;"><?= $sertifikat->certificate_text ?></h2>
+    <p style="text-align: center;"><?= $sertifikat->certificate_text ?></p>
     <hr style="width: 55%; ">
     <h1 style="text-align: center;"><?= $event->event_name?></h1>
     <hr style="width: 55%; ">
     <h3 style="text-align: center;">Lokasi :</h3>
-    <h2 style="text-align: center;"><?= $event->location ?></h2>
+    <h3 style="text-align: center;"><?= $event->location ?></h3>
     <p style="text-align: center;">Pada tanggal: <?= $event->event_date ?></p>
 
 </body></html>

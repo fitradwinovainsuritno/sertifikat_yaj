@@ -20,7 +20,7 @@
                     <button class="btn btn-light">Cancel</button>
                   </form>
                   <br>
-                  <a class="text-center" href="<?= base_url('auth/register') ?>">Registrasi</a>
+                
                 </div>
               </div>
             </div>

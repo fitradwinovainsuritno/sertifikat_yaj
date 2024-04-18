@@ -49,7 +49,7 @@ class sertifikat extends CI_Controller {
 
 		$year['year'] = date('Y');
 
-		$certificate = $this->M_sertifikat->getDataCertificateDetail($id);
+		
 
 		$data['certificate'] = $certificate;
 

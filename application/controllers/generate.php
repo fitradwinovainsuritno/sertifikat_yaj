@@ -80,7 +80,7 @@ class generate extends CI_Controller {
 
 	public function download($id)
     {
-        $certificate = $this->M_sertifikat->getDataCertificateDetail($id);
+        $certificate = $this->M_sertiikat->getDataCertificateDetail($id);
         $event = $this->M_event->getDataEventDetail($id);
 		
         $data['sertifikat'] = $certificate;
